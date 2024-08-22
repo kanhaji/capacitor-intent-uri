@@ -3,8 +3,8 @@ import { WebPlugin } from '@capacitor/core';
 import type { IntentUriPlugin } from './definitions';
 
 export class IntentUriWeb extends WebPlugin implements IntentUriPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  async openUri(options: { url: string }): Promise<{ completed: boolean }> {
+    window.open(options.url, '_blank');
+    return { completed: true };
   }
 }

@@ -1,3 +1,3 @@
 export interface IntentUriPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  openUri(options: { url: string }): Promise<{ completed: boolean }>;
 }
